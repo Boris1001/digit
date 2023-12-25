@@ -1,14 +1,14 @@
 '''
 Комментарии к коду:
 1. `pip install ultralytics==8.0.219` -  Установка ultralytics
-1. `from ultralytics import YOLO` - Импорт класса YOLO из библиотеки ultralytics.
-2. `image = 'test_img_1_0.jpg.png'` - Путь к изображению.
-3. `model = YOLO("best_1522.pt")` - Создание модели YOLO с использованием файла весов "best_1522.pt".
-4. `def count_yolo_objects(class_names, confidence_threshold, yolo_output):` - Функция для подсчета объектов, распознанных YOLO.
-5. `def compare_values(arr, value_dict):` - Функция для сравнения значений.
-6. `def space_direction(image, model):` - Функция для определения направления поворота изображения.
-7. `results = model.predict(image)` - Результаты работы модели на изображении.
-8. `class_id = results[0].boxes.cls.cpu().numpy().astype(int)` - Идентификаторы классов объектов.
+2. `from ultralytics import YOLO` - Импорт класса YOLO из библиотеки ultralytics.
+3. `image = 'test_img_1_0.jpg.png'` - Путь к изображению.
+4. `model = YOLO("best_1522.pt")` - Создание модели YOLO с использованием файла весов "best_1522.pt".
+5. `def count_yolo_objects(class_names, confidence_threshold, yolo_output):` - Функция для подсчета объектов, распознанных YOLO.
+6. `def compare_values(arr, value_dict):` - Функция для сравнения значений.
+7. `def space_direction(image, model):` - Функция для определения направления поворота изображения.
+8. `results = model.predict(image)` - Результаты работы модели на изображении.
+9. `class_id = results[0].boxes.cls.cpu().numpy().astype(int)` - Идентификаторы классов объектов.
 
 '''
 
@@ -17,7 +17,8 @@ import cv2
 import numpy as np
 
 # Путь к изображению
-image = 'test_img_1_0.jpg.png'       
+#image = 'test_img_1_0.jpg.png'       
+image = 'test_img.png'
 
 # Загрузка обученной модели
 model = YOLO("best_1522.pt")         
