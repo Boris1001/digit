@@ -2,7 +2,7 @@
 Комментарии к коду:
 1. `pip install ultralytics==8.0.224` -  Установка ultralytics
 2. `from ultralytics import YOLO` - Импорт класса YOLO из библиотеки ultralytics.
-3. `image = 'test_img_1_0.jpg.png'` - Путь к изображению.
+3. `image = 'test_img.png'` - Путь к изображению.
 4. `model = YOLO("best_1522.pt")` - Создание модели YOLO с использованием файла весов "best_1522.pt".
 5. `def count_yolo_objects(class_names, confidence_threshold, yolo_output):` - Функция для подсчета объектов, распознанных YOLO.
 6. `def compare_values(arr, value_dict):` - Функция для сравнения значений.
