@@ -59,24 +59,37 @@ def compare_values(arr, value_dict):
     Возвращает:
     result -- результат сравнения
     """
-    count_40 = 0
-    count_90 = 0
-    count_180 = 0
-    count_270 = 0
+    if arr.size > 0:
+    
+        count_0 = 0
+        count_90 = 0
+        count_180 = 0
+        count_270 = 0
 
     # Подсчет количества значений
-    for value in arr:
-        if value in value_dict:
-            if value_dict[value] == '4_0' or value_dict[value] == '7_0':
-                count_40 += 1
-            elif value_dict[value] == '4_90' or value_dict[value] == '7_90':
-                count_90 += 1
 
-    # Сравнение количества значений и возвращение результата
-    if count_40 > count_90:
-        return 0
+        for value in arr:
+            if value in value_dict:
+                if value_dict[value] == '4_0' or value_dict[value] == '7_0':
+                    count_0 += 1
+                elif value_dict[value] == '4_90' or value_dict[value] == '7_90':
+                    count_90 += 1
+                elif value_dict[value] == '4_180' or value_dict[value] == '7_180':
+                    count_180 += 1
+                elif value_dict[value] == '4_270' or value_dict[value] == '7_270':
+                    count_270 += 1
+
+        # Сравнение количества значений и возвращение результата
+        if count_0 >= count_90 and count_0 >= count_180 and count_0 >= count_270:
+            return 0
+        elif count_90 >= count_0 and count_90 >= count_180 and count_90 >= count_270:
+            return 90
+        elif count_180 >= count_0 and count_180 >= count_90 and count_180 >= count_270:
+            return 180
+        elif count_270 >= count_0 and count_270 >= count_90 and count_270 >= count_180:
+            return 270
     else:
-        return 90
+        return None
 
 
 def space_direction(image, model):
