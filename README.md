@@ -2,7 +2,7 @@
 Предварительно установить ultrlytics:
 pip install ultralytics==8.0.224
 
-Ссылка на обученную модель: https://drive.google.com/file/d/178_jIUqOO-ozAPUuftX19nzYQd9rFClh/view?usp=sharing
+Ссылка на обученную модель: https://drive.google.com/file/d/10xebg1xeBVjJpbgFZsGrohfK4mSqR14b/view?usp=drive_link
 Скачать в каталог со space_direction.py
 
 Файл test_img.png - изображение для детекта. Разместить в один каталог со space_direction.py
