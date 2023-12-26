@@ -16,12 +16,12 @@ from ultralytics import YOLO
 import cv2
 import numpy as np
 
-# Путь к изображению
-#image = 'test_img_1_0.jpg.png'       
+# Путь к изображению       
 image = 'test_img.png'
 
 # Загрузка обученной модели
-model = YOLO("best_1522.pt")         
+# указать путь к весам модели
+model = YOLO("best_s_v12_350.pt")         
 
 def count_yolo_objects(class_names, confidence_threshold, yolo_output):
     """
@@ -68,17 +68,19 @@ def compare_values(arr, value_dict):
         count_270 = 0
 
     # Подсчет количества значений
-
+    # на обученной модели best_s_v12_350.pt перепутаны местами 90 и 270 градусов
+      
         for value in arr:
             if value in value_dict:
                 if value_dict[value] == '4_0' or value_dict[value] == '7_0':
                     count_0 += 1
                 elif value_dict[value] == '4_90' or value_dict[value] == '7_90':
-                    count_90 += 1
+                    count_270 += 1
                 elif value_dict[value] == '4_180' or value_dict[value] == '7_180':
                     count_180 += 1
                 elif value_dict[value] == '4_270' or value_dict[value] == '7_270':
-                    count_270 += 1
+                    count_90 += 1
+           
 
         # Сравнение количества значений и возвращение результата
         if count_0 >= count_90 and count_0 >= count_180 and count_0 >= count_270:
@@ -102,7 +104,7 @@ def space_direction(image, model):
     model -- модель нейронки
 
     Возвращает:
-    result -- направление поворота (0 или 90)
+    result -- направление поворота 
     """
     results = model.predict(image)
     CLASS_NAMES_DICT = model.model.names
