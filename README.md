@@ -1,5 +1,8 @@
 # 
+
 Предварительно установить ultrlytics:
+sudo apt install python3-pip
+sudo apt install poppler-utils
 pip install ultralytics==8.0.224
 
 Ссылка на обученную модель: https://drive.google.com/file/d/10xebg1xeBVjJpbgFZsGrohfK4mSqR14b/view?usp=drive_link
