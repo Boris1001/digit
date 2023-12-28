@@ -13,11 +13,10 @@
 '''
 
 from ultralytics import YOLO  
-import cv2
 import numpy as np
-
-# Путь к изображению       
-image = 'test_img.png'
+from pdf2image import convert_from_path
+import os
+import sys
 
 # Загрузка обученной модели
 # указать путь к весам модели
@@ -113,7 +112,23 @@ def space_direction(image, model):
     
     result = compare_values(class_id, CLASS_NAMES_DICT)
     return result
+
+def convert_pdf_to_jpg(pdf_path):
+    # Проверка существования файла
+    if not os.path.exists(file_path):
+        print('Файл недоступен')
+        return None
     
- 
-# Вывод результатов
-print("Документ повёрнут на", space_direction(image, model), "градусов.")
+    # Используем `convert_from_path` из библиотеки `pdf2image` для конвертирования PDF в изображения
+    images = convert_from_path(pdf_path)
+
+    return images
+
+
+if __name__ == "__main__":
+    
+    file_path = sys.argv[1]
+#    file_path = 'BUH-20230202121804.pdf'
+    image = convert_pdf_to_jpg(file_path)
+    
+    print("Документ повёрнут на", space_direction(image, model), "градусов.")
