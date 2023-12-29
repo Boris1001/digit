@@ -124,11 +124,17 @@ def convert_pdf_to_jpg(pdf_path):
 
     return images
 
+# output_path = 'result.txt'  
 
 if __name__ == "__main__":
-    
     file_path = sys.argv[1]
-#    file_path = 'BUH-20230202121804.pdf'
-    image = convert_pdf_to_jpg(file_path)
+    if not os.path.exists(file_path):
+        print('The file is not available')
+    image = convert_pdf_to_jpg(f'{file_path}')
+    degree = space_direction(image, model)
+
     
-    print("Документ повёрнут на", space_direction(image, model), "градусов.")
+#    with open(output_path, 'w') as file:
+#        file.write(str(degree))
+
+    print(f'rotate: {degree}')
