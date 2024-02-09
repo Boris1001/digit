@@ -1,5 +1,6 @@
 # 
-
+Пример разметки данных (фото документанта взято из открытых источников).
+![example](https://github.com/Boris1001/digit/assets/79296774/291d0511-d5bc-4b1d-b9b6-3b96de862723)
 Предварительно установить ultrlytics:
 
 sudo apt install python3-pip
