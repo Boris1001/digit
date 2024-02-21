@@ -56,7 +56,6 @@ def compare_values(arr, value_dict):
     arr -- массив значений
     value_dict -- словарь соответствия классов и значений
 
-    Возвращает:
     result -- результат сравнения
     """
     if arr.size > 0:
